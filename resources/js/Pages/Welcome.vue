@@ -82,11 +82,11 @@ const submit = () => {
             {{ status?.message }}
         </div>
 
-        <div class="flex mb-2 w-100">
-            <PrimaryButton class="ms-auto" @click="exportUsers">
-                Export Data
-            </PrimaryButton>
-        </div>
+<!--        <div class="flex mb-2 w-100">-->
+<!--            <PrimaryButton class="ms-auto" @click="exportUsers">-->
+<!--                Export Data-->
+<!--            </PrimaryButton>-->
+<!--        </div>-->
 
         <form @submit.prevent="submit">
             <div>
