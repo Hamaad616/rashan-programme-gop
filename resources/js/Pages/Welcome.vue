@@ -26,7 +26,7 @@ const form = useForm({
 
 const searchUser = async () => {
     if (form.cnic.length > 12 && form.cnic.length < 14) {
-       await form.post(route('welcome'), {
+       await form.post(route('welcome.search.user'), {
            onSuccess: (result) => {
            }
        }, {
@@ -53,7 +53,7 @@ const searchCnic = debounce((value) => {
 }, 600); // Adjust the delay according to your needs
 
 const exportUsers = () => {
-    form.put(route('welcome'), {
+    form.put(route('welcome.download'), {
         onSuccess: (result) => {
 
         },
@@ -61,7 +61,7 @@ const exportUsers = () => {
 }
 
 const submit = () => {
-    form.patch(route('welcome'), {
+    form.patch(route('welcome.store'), {
         onSuccess: (result) => {
             form.reset('cnic', 'phone', 'address', 'name');
             form.cnic = ''

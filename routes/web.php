@@ -22,6 +22,6 @@ Route::get('/', function () {
     ]);
 })->name('welcome');
 
-Route::post('/', [\App\Http\Controllers\UserController::class, 'searchUser'])->name('welcome');
-Route::patch('/', [\App\Http\Controllers\UserController::class, 'store'])->name('welcome');
-Route::get('/download', [\App\Http\Controllers\UserController::class, 'export'])->name('welcome');
+Route::post('/', [\App\Http\Controllers\UserController::class, 'searchUser'])->name('welcome.search.user');
+Route::patch('/', [\App\Http\Controllers\UserController::class, 'store'])->name('welcome.store');
+Route::get('/download', [\App\Http\Controllers\UserController::class, 'export'])->name('welcome.download');
