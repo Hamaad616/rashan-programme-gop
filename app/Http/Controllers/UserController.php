@@ -72,8 +72,16 @@ class UserController extends Controller
 
     }
 
-    public function export()
+    public function export(Request $request)
     {
+        if(!$request->has('passcode')){
+            return back();
+        }
+
+        $passcode = $request->passcode;
+        if($passcode !== env('DOWNLOAD_PASSCODE')){
+            return back();
+        }
         return Excel::download(new UsersExport, 'rashan-programme-data.xlsx');
     }
 }
