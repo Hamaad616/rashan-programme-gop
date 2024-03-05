@@ -87,8 +87,6 @@ class UserController extends Controller
             return back();
         }
 
-        Excel::download(new UsersExport, 'rashan-programme-data.xlsx');
-
-        return back();
+        return Excel::download(new UsersExport, 'rashan-programme-data.xlsx');
     }
 }
