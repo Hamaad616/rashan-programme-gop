@@ -25,7 +25,3 @@ Route::get('/', function () {
 Route::post('/', [\App\Http\Controllers\UserController::class, 'searchUser'])->name('welcome.search.user');
 Route::patch('/', [\App\Http\Controllers\UserController::class, 'store'])->name('welcome.store');
 Route::get('/download', [\App\Http\Controllers\UserController::class, 'export'])->name('welcome.download');
-
-Route::get('test', function (){
-   dd(env('DOWNLOAD_PASSCODE'));
-});
