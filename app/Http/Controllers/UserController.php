@@ -78,10 +78,17 @@ class UserController extends Controller
             return back();
         }
 
+        if(is_null($request->passcode)){
+            return redirect()->to(route('welcome'));
+        }
+
         $passcode = $request->passcode;
         if($passcode !== env('DOWNLOAD_PASSCODE')){
             return back();
         }
-        return Excel::download(new UsersExport, 'rashan-programme-data.xlsx');
+
+        Excel::download(new UsersExport, 'rashan-programme-data.xlsx');
+
+        return back();
     }
 }
